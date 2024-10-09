@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import pandas as pd
+import os
 
 # Scrape the data
 
@@ -39,8 +40,8 @@ for location in locations:
 
 df = pd.DataFrame(homes)
 
-path= "/workspaces/data_engineering/data"
+path= os.path.join("data", 'housing.csv')
 
 # convert DataFrame to csv
 
-df.to_csv(path, 'housing.csv')
+df.to_csv(path)
