@@ -5,9 +5,9 @@ from minio.error import S3Error
 def main():
     # Create a client with the MinIO server playground, its access key
     # and secret key.
-    client = Minio("crispy-space-engine-xg47jvrvwqpcgw7-9000",
-        access_key="KjG0qZ4oUbcEUqsjE54p",
-        secret_key="z4wzqxrwJK2IV8FLkTAARjicQ7EIzWTqlTvEdKus",
+    client = Minio("play.min.io",
+        access_key="3qiH757hF4FuVvaADrWx",
+        secret_key="fuXluVd2ezJeNKmFAk5lPV5WFouqKUP4deoHgp7k",
         secure=True
     )
 
@@ -15,7 +15,7 @@ def main():
     source_file = "/workspaces/data_engineering/data/housing.csv"
 
     # The destination bucket and filename on the MinIO server
-    bucket_name = "test"
+    bucket_name = "housing-project-test"
     destination_file = "housing.csv"
 
     # Make the bucket if it doesn't exist.
