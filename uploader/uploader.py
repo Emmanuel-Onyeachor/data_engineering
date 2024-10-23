@@ -5,16 +5,17 @@ from minio.error import S3Error
 def main():
     # Create a client with the MinIO server playground, its access key
     # and secret key.
-    client = Minio("crispy-space-engine-xg47jvrvwqpcgw7-9000.app.github.dev",
+    client = Minio("crispy-space-engine-xg47jvrvwqpcgw7-9000",
         access_key="KjG0qZ4oUbcEUqsjE54p",
         secret_key="z4wzqxrwJK2IV8FLkTAARjicQ7EIzWTqlTvEdKus",
+        secure=True
     )
 
     # The file to upload, change this path if needed
     source_file = "/workspaces/data_engineering/data/housing.csv"
 
     # The destination bucket and filename on the MinIO server
-    bucket_name = "python-test-bucket"
+    bucket_name = "test"
     destination_file = "housing.csv"
 
     # Make the bucket if it doesn't exist.
