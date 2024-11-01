@@ -1,14 +1,18 @@
 # import libraries
 import os
+
+from dotenv import load_dotenv
 from minio import Minio
 from minio.error import S3Error
+
+load_dotenv()
 
 def main():
     # Create a client with the MinIO server playground, its access key
     # and secret key.
     client = Minio("play.min.io",
-        access_key= os.getenv(MINIO_ACCESS_KEY),
-        secret_key= os.getenv(MINIO_SECRET_KEY),
+        access_key= os.getenv("MINIO_ACCESS_KEY"),
+        secret_key= os.getenv("MINIO_SECRET_KEY"),
         secure=True
     )
 

@@ -7,9 +7,9 @@ import snowflake.connector
 from botocore.client import Config
 
 # define minio s3 credentials
-MINIO_ENDPOINT = os.getenv("play.min.io")
-MINIO_ACCESS_KEY = os.getenv("3qiH757hF4FuVvaADrWx")
-MINIO_SECRET_KEY = os.getenv("fuXluVd2ezJeNKmFAk5lPV5WFouqKUP4deoHgp7k")
+MINIO_ENDPOINT = "play.min.io"
+MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY")
+MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY")
 BUCKET_NAME = "housing-project-test"
 OBJECT_KEY = "https://play.min.io:9443/browser/housing-project-test/housing.csv"
 
@@ -34,11 +34,11 @@ s3 = boto3.client(
 # initialise snowflake connection
 conn = snowflake.connector.connect(
     user = SNOWFLAKE_USER,
-    password = SNOWFLAKE_PASSWORD
-    account = SNOWFLAKE_ACCOUNT
-    warehuse = SNOWFLAKE_WAREHOUSE
-    database = SNOWFLAKE_DATABASE
-    schema = SNOWFLAKE_SCHEMA
+    password = SNOWFLAKE_PASSWORD,
+    account = SNOWFLAKE_ACCOUNT,
+    warehuse = SNOWFLAKE_WAREHOUSE,
+    database = SNOWFLAKE_DATABASE,
+    schema = SNOWFLAKE_SCHEMA,
 )
 
 # define function to upload from minio to snowflake
