@@ -1,4 +1,5 @@
-# file_uploader.py MinIO Python SDK example
+# import libraries
+import os
 from minio import Minio
 from minio.error import S3Error
 
@@ -6,8 +7,8 @@ def main():
     # Create a client with the MinIO server playground, its access key
     # and secret key.
     client = Minio("play.min.io",
-        access_key="3qiH757hF4FuVvaADrWx",
-        secret_key="fuXluVd2ezJeNKmFAk5lPV5WFouqKUP4deoHgp7k",
+        access_key= os.getenv(MINIO_ACCESS_KEY),
+        secret_key= os.getenv(MINIO_SECRET_KEY),
         secure=True
     )
 
